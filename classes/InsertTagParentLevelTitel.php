@@ -36,7 +36,7 @@ class InsertTagParentLevelTitel extends \Frontend
             $trail = $objPage->trail;
             $objNavLevel = \PageModel::findPublishedById($trail[(isset($arrSplit[1]) && $arrSplit[1] != '' ? $arrSplit[1] : 1)]);
 
-            return '<a href="'.$objNavLevel->alias.'.html" title="'.$objNavLevel->title.'">'.$objNavLevel->title.'</a>';
+            return '<a href="'.$this->generateFrontendUrl($objNavLevel->row()).'" title="'.$objNavLevel->title.'">'.$objNavLevel->title.'</a>';
         }
         return false;
 	 }
